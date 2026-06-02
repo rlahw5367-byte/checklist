@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏠 내집마련 가이드 — 신혼부부 생애최초 매매</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A1520;--bg2:#0F1D2D;--card:#141F2E;--card2:#111C2A;--card3:#0D1720;--gold:#E8B84B;--gold2:#D4956A;--text:#E5E7EB;--muted:#9CA3AF;--dim:#6B7280;--border:rgba(255,255,255,0.06)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth}
+body{font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);color:var(--text);min-height:100vh}
+.wrap{max-width:600px;margin:0 auto;padding-bottom:80px}
+
+/* HEADER */
+.hdr{background:rgba(10,21,32,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(232,184,75,.13);position:sticky;top:0;z-index:100;padding:14px 16px 0}
+.hdr-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.hdr-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#E8B84B,#D4956A);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.hdr-title{font-size:15px;font-weight:800;color:var(--gold);letter-spacing:-.3px}
+.hdr-sub{font-size:11px;color:var(--dim);margin-top:1px}
+.tabs{display:flex;gap:8px;padding-bottom:14px}
+.tab-btn{flex:1;padding:9px 0;border-radius:10px;font-size:12.5px;font-weight:700;border:none;cursor:pointer;transition:all .2s;background:var(--card);color:var(--dim);font-family:inherit}
+.tab-btn.on{background:linear-gradient(135deg,#E8B84B,#D4956A);color:#0A1520}
+
+/* PANELS */
+.panel{padding:16px 16px 0;display:none}
+.panel.on{display:block;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+/* BADGES */
+.bdg{display:inline-block;font-size:9.5px;font-weight:800;padding:1px 6px;border-radius:4px;vertical-align:middle}
+.p1{background:#3D0A0A;color:#FF6B6B}.p2{background:#2D1500;color:#FF9E40}
+.p3{background:#141E00;color:#A3CF62}.p4{background:#001530;color:#60A8DC}
+.ess{background:#3D1515;color:#F87171}
+.pill{border-radius:20px;padding:2px 8px;font-size:10px;font-weight:700}
+.s0{background:rgba(232,184,75,.15);color:#E8B84B}
+.s1{background:rgba(91,155,213,.15);color:#5B9BD5}
+.sx{background:rgba(107,114,128,.15);color:#6B7280}
+
+/* PROGRESS */
+.prg-wrap{background:linear-gradient(135deg,#1A2D20,#1A2535);border:1px solid rgba(232,184,75,.17);border-radius:18px;padding:16px;margin-bottom:14px;display:flex;align-items:center;gap:14px}
+.ring-box{position:relative;flex-shrink:0;width:58px;height:58px}
+.ring-lbl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--gold)}
+.prg-info{flex:1}
+.prg-title{font-size:14px;font-weight:700;margin-bottom:4px}
+.prg-status{font-size:11.5px;margin-bottom:6px}
+.prg-bar{background:#0A1520;border-radius:4px;height:5px}
+.prg-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#E8B84B,#F0D070);transition:width .4s ease}
+
+/* LEGEND */
+.legend{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 14px;margin-bottom:14px}
+.legend-ttl{font-size:11px;color:var(--dim);font-weight:700;margin-bottom:8px}
+.legend-row{display:flex;flex-wrap:wrap;gap:6px}
+
+/* CAT ACCORDION */
+.cat-wrap{margin-bottom:10px}
+.cat-btn{width:100%;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:border-color .2s;font-family:inherit;text-align:left}
+.cat-btn.on{border-radius:14px 14px 0 0}
+.cat-emoji{font-size:18px;flex-shrink:0}
+.cat-inf{flex:1;min-width:0}
+.cat-name{font-size:13px;font-weight:700}
+.cat-desc{font-size:11px;color:var(--dim);margin-top:2px}
+.cat-bar-wrap{margin-top:5px;background:#0A1520;border-radius:3px;height:3px}
+.cat-bar-fill{height:100%;border-radius:3px;transition:width .4s}
+.cat-meta{display:flex;align-items:center;gap:7px}
+.cat-cnt{font-size:11.5px;color:var(--dim)}
+.cat-chev{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px}
+.cat-items{background:var(--card2);border:1px solid transparent;border-top:none;border-radius:0 0 14px 14px;padding:12px 12px 8px;display:none}
+.cat-items.on{display:block}
+
+/* CHECK ITEM */
+.ci{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;margin-bottom:7px;overflow:hidden;transition:border-color .2s}
+.ci-row{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;cursor:pointer}
+.ci-circle{width:20px;height:20px;border-radius:50%;border:2px solid;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:background .15s;font-size:10px;font-weight:800;color:#0A1520}
+.ci-body{flex:1;min-width:0}
+.ci-bdgs{margin-bottom:3px}
+.ci-txt{font-size:12.5px;line-height:1.5;color:var(--text)}
+.ci-txt.done{text-decoration:line-through;color:#4B5563}
+.ci-exp{background:none;border:none;cursor:pointer;color:#4B5563;font-size:10px;padding:0 2px;flex-shrink:0;margin-top:4px;font-family:inherit}
+.ci-note{padding:0 12px 10px 42px;border-top:1px solid;display:none}
+.ci-note.on{display:block}
+.ci-note p{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.65}
+
+/* TIP */
+.tip{background:#1A1F2E;border:1px solid rgba(74,144,217,.18);border-radius:14px;padding:12px 14px;margin-top:8px}
+.tip p{font-size:11.5px;color:var(--muted);line-height:1.7}
+
+/* MINDMAP CENTER */
+.center-nd{background:linear-gradient(135deg,#1A2D20,#1A2038);border:2px solid rgba(232,184,75,.2);border-radius:20px;padding:18px;text-align:center;margin-bottom:14px}
+.c-icon{font-size:28px;margin-bottom:6px}
+.c-title{font-size:15px;font-weight:800;color:var(--gold);letter-spacing:-.3px}
+.c-sub{font-size:11px;color:var(--dim);margin-top:3px}
+.c-tags{display:flex;gap:7px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+.c-tag{font-size:10.5px;font-weight:600;padding:3px 10px;border-radius:20px}
+
+/* BRANCH */
+.br-wrap{margin-bottom:9px}
+.br-btn{width:100%;background:var(--card);border:2px solid rgba(255,255,255,.06);border-radius:16px;padding:13px 14px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:border-color .2s;font-family:inherit;text-align:left}
+.br-btn.on{border-radius:16px 16px 0 0}
+.br-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.br-inf{flex:1}
+.br-lbl{font-size:14px;font-weight:800}
+.br-sub{font-size:11px;color:var(--dim);margin-top:2px}
+.br-chev{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+.br-body{border:2px solid;border-top:none;border-radius:0 0 16px 16px;padding:12px 12px 6px;display:none}
+.br-body.on{display:block}
+
+/* NODE CARDS */
+.nd{background:var(--card);border-radius:14px;margin-bottom:8px;overflow:hidden}
+.nd-in{padding:12px 14px}
+.nd-ttl{font-size:13px;font-weight:700;color:var(--text);margin-bottom:10px}
+
+/* CALC */
+.calc-row{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;border-radius:8px;margin-bottom:4px}
+.calc-lbl{font-size:11.5px;color:var(--muted)}
+.calc-val{font-size:12px;text-align:right;max-width:58%;line-height:1.4}
+.warn-box{padding:8px 14px 10px;border-top:1px solid}
+.warn-box p{font-size:11.5px;color:#FCD34D;line-height:1.65}
+
+/* Y/N */
+.yn-q{font-size:13px;color:var(--text);line-height:1.5;font-weight:500;margin-bottom:10px}
+.yn-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.yn-y{background:#0F2A1E;border:1px solid rgba(22,83,54,.3);border-radius:10px;padding:8px 10px}
+.yn-n{background:#2A1010;border:1px solid rgba(83,49,22,.5);border-radius:10px;padding:8px 10px}
+.yn-lbl{font-size:10px;font-weight:800;margin-bottom:3px}
+.yn-y .yn-lbl{color:#34D399}.yn-n .yn-lbl{color:#FCA5A5}
+.yn-y p{font-size:11.5px;color:#6EE7B7;line-height:1.5;margin:0}
+.yn-n p{font-size:11.5px;color:#FCA5A5;line-height:1.5;margin:0}
+
+/* DETAIL TOGGLE */
+.dt-btn{width:100%;padding:6px 14px;background:none;border:none;border-top:1px solid;cursor:pointer;color:var(--dim);font-size:11px;text-align:left;font-family:inherit;transition:color .2s}
+.dt-btn:hover{color:var(--muted)}
+.dt-panel{padding:8px 14px 12px;background:var(--card3);display:none}
+.dt-panel.on{display:block}
+.dt-panel p{font-size:11.5px;color:var(--muted);line-height:1.7;white-space:pre-line;margin:0}
+
+/* PRODUCT */
+.prod{background:var(--card);border-radius:14px;margin-bottom:8px;overflow:hidden}
+.prod-in{padding:12px 14px}
+.prod-hdr{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.prod-name{font-size:13px;font-weight:700;color:var(--text)}
+.prod-cond{font-size:11px;color:var(--muted);margin-bottom:6px}
+.prod-res{border-radius:8px;padding:8px 10px}
+.prod-res p{font-size:12.5px;font-weight:600;margin:0;line-height:1.5}
+
+/* COMPARE */
+.cmp-tbl{width:100%;border-collapse:collapse}
+.cmp-hd th{padding:8px 10px;font-size:12px;font-weight:700}
+.cmp-hd th:first-child{font-size:11px;color:var(--dim);text-align:left}
+.cmp-tr td{padding:7px 10px;font-size:11px;line-height:1.4}
+.cmp-tr td:first-child{font-size:11px;color:var(--muted)}
+.cmp-tr td.a{color:#6EE7B7;text-align:center}
+.cmp-tr td.b{text-align:center;color:var(--text)}
+.cmp-tr td.bad{color:#FCA5A5}
+.cmp-tr.e{background:#0D1720}.cmp-tr.o{background:#111C2A}
+
+/* SOURCES */
+.src{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 14px;margin-top:8px}
+.src p{font-size:10.5px;color:var(--dim);line-height:1.8}
+
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#1E2D3F;border-radius:2px}
+
+/* ── MEMO TAB ── */
+.memo-toolbar{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.btn-add{flex:1;padding:11px 0;border-radius:12px;font-size:13px;font-weight:700;border:2px dashed #E8B84B55;background:rgba(232,184,75,.08);color:var(--gold);cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-add:hover{background:rgba(232,184,75,.15);border-color:var(--gold)}
+.btn-exp{padding:11px 16px;border-radius:12px;font-size:12px;font-weight:700;border:1px solid rgba(91,155,213,.3);background:rgba(91,155,213,.08);color:#5B9BD5;cursor:pointer;font-family:inherit;white-space:nowrap}
+.empty-msg{text-align:center;padding:40px 20px;color:var(--dim);font-size:13px;line-height:1.8}
+.empty-msg .em-icon{font-size:36px;margin-bottom:12px}
+
+.prop-card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:18px;margin-bottom:14px;overflow:hidden;transition:border-color .2s}
+.prop-card-hdr{display:flex;align-items:center;gap:10px;padding:14px 14px 0}
+.prop-num{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#E8B84B,#D4956A);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#0A1520;flex-shrink:0}
+.prop-name-inp{flex:1;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.12);padding:4px 0;font-size:14px;font-weight:700;color:var(--text);font-family:inherit;outline:none}
+.prop-name-inp::placeholder{color:var(--dim)}
+.prop-del{width:28px;height:28px;border-radius:8px;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2);color:#F87171;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+
+.prop-stars{display:flex;gap:3px;padding:10px 14px 0}
+.star-btn{font-size:22px;cursor:pointer;transition:transform .1s;background:none;border:none;line-height:1;padding:0}
+.star-btn:hover{transform:scale(1.2)}
+
+.prop-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 14px 0}
+.prop-field{display:flex;flex-direction:column;gap:3px}
+.prop-field.full{grid-column:1/-1}
+.fld-lbl{font-size:10px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.fld-inp{background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px 10px;font-size:12.5px;color:var(--text);font-family:inherit;outline:none;width:100%;transition:border-color .2s}
+.fld-inp:focus{border-color:rgba(232,184,75,.4)}
+.fld-inp::placeholder{color:#374151}
+.link-row{display:flex;gap:6px;align-items:center}
+.link-btn{padding:8px 10px;border-radius:8px;background:rgba(91,155,213,.12);border:1px solid rgba(91,155,213,.2);color:#5B9BD5;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;text-decoration:none;display:flex;align-items:center;gap:3px}
+
+/* PHOTOS */
+.photo-section{padding:12px 14px 0}
+.photo-ttl{font-size:11px;color:var(--dim);font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px}
+.photo-row{display:flex;gap:8px;flex-wrap:wrap}
+.photo-thumb{position:relative;width:80px;height:80px;border-radius:10px;overflow:hidden;flex-shrink:0}
+.photo-thumb img{width:100%;height:100%;object-fit:cover}
+.photo-del{position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.7);border:none;color:#fff;font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.photo-add-btn{width:80px;height:80px;border-radius:10px;border:2px dashed rgba(255,255,255,.15);background:rgba(255,255,255,.03);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--dim);font-size:10px;font-family:inherit}
+.photo-add-btn span{font-size:22px}
+
+/* MEMO SECTIONS */
+.memo-section{padding:12px 14px 0}
+.memo-tabs-row{display:flex;gap:5px;margin-bottom:8px;overflow-x:auto;padding-bottom:2px}
+.memo-tab-btn{padding:5px 10px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid rgba(255,255,255,.08);background:var(--card2);color:var(--dim);cursor:pointer;font-family:inherit;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.memo-tab-btn.on{background:rgba(232,184,75,.15);border-color:rgba(232,184,75,.3);color:var(--gold)}
+.memo-textarea{width:100%;min-height:90px;background:var(--card2);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px;font-size:12.5px;color:var(--text);font-family:inherit;outline:none;resize:vertical;transition:border-color .2s;line-height:1.6}
+.memo-textarea:focus{border-color:rgba(232,184,75,.3)}
+.memo-textarea::placeholder{color:#374151}
+.prop-card-footer{padding:12px 14px;margin-top:12px;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:6px}
+.rating-display{display:flex;gap:2px}
+.score-lbl{font-size:11px;color:var(--muted);margin-left:4px}
+
+/* ── COMPARE TAB ── */
+.cmp-empty{text-align:center;padding:40px 20px;color:var(--dim);font-size:13px;line-height:1.8}
+.cmp-header{background:var(--card);border:1px solid rgba(232,184,75,.15);border-radius:14px;padding:12px 14px;margin-bottom:14px}
+.cmp-header p{font-size:12px;color:var(--muted);line-height:1.6}
+.cmp-cards{display:flex;flex-direction:column;gap:10px}
+.cmp-prop{background:var(--card);border-radius:16px;overflow:hidden;border-left:4px solid}
+.cmp-prop-hdr{padding:12px 14px;display:flex;align-items:center;gap:10px}
+.cmp-prop-name{font-size:14px;font-weight:800;flex:1}
+.cmp-stars-big{font-size:16px;letter-spacing:1px}
+.cmp-score-badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:800}
+.cmp-fields{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.cmp-field{padding:8px 14px;border-top:1px solid rgba(255,255,255,.05)}
+.cmp-field .lbl{font-size:10px;color:var(--dim);font-weight:600;margin-bottom:2px}
+.cmp-field .val{font-size:12.5px;color:var(--text);font-weight:500;line-height:1.4}
+.cmp-memo-row{padding:10px 14px;border-top:1px solid rgba(255,255,255,.05)}
+.cmp-memo-lbl{font-size:10px;color:var(--dim);font-weight:600;margin-bottom:4px}
+.cmp-memo-txt{font-size:12px;color:var(--muted);line-height:1.6;white-space:pre-wrap}
+.score-5{color:#34D399;background:rgba(52,211,153,.15)}
+.score-4{color:#60A8DC;background:rgba(96,168,220,.15)}
+.score-3{color:#E8B84B;background:rgba(232,184,75,.15)}
+.score-2{color:#FF9E40;background:rgba(255,158,64,.15)}
+.score-1{color:#FF6B6B;background:rgba(255,107,107,.15)}
+.border-5{border-left-color:#34D399}
+.border-4{border-left-color:#60A8DC}
+.border-3{border-left-color:#E8B84B}
+.border-2{border-left-color:#FF9E40}
+.border-1{border-left-color:#FF6B6B}
+.border-0{border-left-color:#374151}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr">
+  <div class="hdr-top">
+    <div class="hdr-icon">🏠</div>
+    <div>
+      <div class="hdr-title">내집마련 가이드</div>
+      <div class="hdr-sub">무주택 신혼부부 · 생애최초 매매 · 2026 최신 기준</div>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn on" id="tb0" onclick="switchTab(0)">✅ 체크</button>
+    <button class="tab-btn"    id="tb1" onclick="switchTab(1)">🧭 가이드</button>
+    <button class="tab-btn"    id="tb2" onclick="switchTab(2)">📝 메모</button>
+    <button class="tab-btn"    id="tb3" onclick="switchTab(3)">⚖️ 비교</button>
+  </div>
+</div>
+
+<div id="p0" class="panel on"></div>
+<div id="p1" class="panel"></div>
+<div id="p2" class="panel"></div>
+<div id="p3" class="panel"></div>
+
+</div>
+<script>
+// ─── DATA ───────────────────────────────────────
+const PRI={P1:{l:'P1 필수',c:'p1'},P2:{l:'P2 중요',c:'p2'},P3:{l:'P3 확인',c:'p3'},P4:{l:'P4 참고',c:'p4'}};
+
+const CL=[
+  {id:'legal',em:'⚖️',nm:'계약 전 법적 필수확인',col:'#FF6B6B',
+   ds:'하나라도 빠지면 계약 파기·손실 가능 — 계약 당일이 아닌 반드시 사전 확인',
+   it:[
+    {id:'l1',pr:'P1',es:true,tx:'등기부등본 열람 — 근저당·가압류·압류·가처분·예고등기 전부 확인',
+     nt:'법원 인터넷등기소(iros.go.kr). 단 1,000원. 잔금 당일 오전 한 번 더 발급 필수. 근저당 설정금이 시세 60% 초과 시 위험'},
+    {id:'l2',pr:'P1',es:true,tx:'건축물대장 열람 — 위반건축물·불법 구조변경 여부 (정부24 무료)',
+     nt:'베란다 불법 확장·내력벽 철거 시 담보대출 거절·원상복구 명령 가능. 건축물 현황도와 실제 구조 반드시 대조'},
+    {id:'l3',pr:'P1',es:true,tx:'선순위 임차인 확인 — 대항력 여부·보증금 금액 정확히 파악',
+     nt:'내 매수가 - 기존 임차인 보증금 - 내 대출 합계가 매수가의 80% 이내여야 안전. 초과 시 경매 낙찰가에서 손실 위험'},
+    {id:'l4',pr:'P1',es:true,tx:'매도인 신분증·등기부 소유자 동일인 여부 확인',
+     nt:'대리인 거래 시 인감증명서·위임장 원본 필수. 명의 불일치 계약은 무효 처리 가능성'},
+    {id:'l5',pr:'P2',tx:'토지이용계획확인서 — 용도지역(1·2·3종 주거) 확인 (정부24 무료)',
+     nt:'용도지역이 재건축 가능 층수·용적률 상한을 결정. 2종→3종 상향 여부가 재건축 수익성에 직결'},
+    {id:'l6',pr:'P2',tx:'관리비 체납 여부 — 관리사무소에 직접 문의 (서면 확인 요청)',
+     nt:'체납 관리비는 새 매수자에게 승계됨. 완납 후 잔금 지급 조건을 계약 특약에 반드시 명시'},
+  ]},
+  {id:'fin',em:'💰',nm:'단지 재무·관리 리스크',col:'#FF9E40',
+   ds:'입주 후 수백만 원 추가 지출 가능 — 관리사무소 직접 방문, 서류 요청',
+   it:[
+    {id:'f1',pr:'P1',es:true,tx:'장기수선충당금 잔액·소진율 확인 (관리사무소 방문, 적립 현황표 요청)',
+     nt:'잔액 부족 시 입주 후 세대당 수십~수백만 원 특별부과금. 1997~2000년 단지는 배관·엘리베이터 교체 임박 多'},
+    {id:'f2',pr:'P1',es:true,tx:'관리비 실고지서 최근 3개월치 직접 요청 (여름·겨울 포함)',
+     nt:'앱 표시 금액과 실제 고지서 다를 수 있음. 최고치 기준 예산 계획 세울 것'},
+    {id:'f3',pr:'P2',tx:'엘리베이터 교체 이력·예정 시기 확인 (관리사무소 문의)',
+     nt:'대형 단지 엘리베이터 교체 비용 수억~수십억 원. 교체 직후 단지는 충당금 급격히 소진'},
+    {id:'f4',pr:'P2',tx:'배관·전기패널·외벽 단열 교체 이력 및 잔여 수명 파악',
+     nt:'1990년대 단지는 PVC 배관 노후화로 누수 빈번. 세대 내 배관 교체 비용 별도 200~500만 원'},
+    {id:'f5',pr:'P3',tx:'주차 대수/세대 비율 — 저녁 9시에 방문해 실제 주차 현황 확인',
+     nt:'1.0 미만이면 저녁마다 주차 전쟁. 1997~2000년 단지는 0.5~0.7 수준도 있음'},
+  ]},
+  {id:'def',em:'🔍',nm:'매물 내부 하자 확인',col:'#E07B4A',
+   ds:'도배·장판으로 가린 하자 多 — 30분 이상 체류, 사진·영상 촬영',
+   it:[
+    {id:'d1',pr:'P1',es:true,tx:'천장 모서리·창문 주변 전체 — 누수·곰팡이·결로 흔적 사진 촬영',
+     nt:'벽지 불룩하거나 변색 부위 손으로 눌러 수분 확인. 도배 새로 한 집은 더 의심. 겨울·장마 이후 촬영본 요청 가능'},
+    {id:'d2',pr:'P1',es:true,tx:'베란다 확장 합법 여부 — 건축물대장 기타 면적과 실제 구조 대조',
+     nt:'불법 확장 시 담보대출 거절 사례 실제 있음. 내력벽 철거는 구조 안전 문제로 치명적'},
+    {id:'d3',pr:'P2',tx:'화장실 배수구 냄새·물빠짐 속도·줄눈 곰팡이 전체 확인',
+     nt:'배수 느림 = 배관 노후 or 막힘. 교체 시 50~200만 원. 냄새는 방수·트랩 문제. 직접 물 흘려보기'},
+    {id:'d4',pr:'P2',tx:'창문 샷시 단열·결로·뒤틀림 — 이중창·삼중창 여부 확인',
+     nt:'23평 전체 샷시 교체 시 400~700만 원. 단창이면 겨울 결로·냉기 심각. 직접 창문 열고 닫아보기'},
+    {id:'d5',pr:'P2',tx:'난방 방식(개별/지역난방) 및 보일러 교체 연도 확인',
+     nt:'지역난방이 개별보다 평균 30~40% 저렴. 개별 보일러 교체 100~200만 원. 설치 10년 이상이면 곧 교체 필요'},
+    {id:'d6',pr:'P2',tx:'층간소음 테스트 — 15분 이상 조용히 앉아 위아래·옆집 생활음 청취',
+     nt:'구축 슬래브 두께 150~180mm로 신축 대비 얇음. 뛰는 소리·발소리·욕실 소음 기준으로 판단'},
+    {id:'d7',pr:'P3',tx:'일조권 — 오전 10시~오후 3시 방문, 각 방 직접 채광 확인',
+     nt:'저층+동향+앞동 근접 조합은 겨울 일조 2~3시간 불과. 앱 이미지만으로 판단 절대 불가'},
+    {id:'d8',pr:'P3',tx:'전기 콘센트 수·전기 용량·수납 공간·환기창 상태 확인',
+     nt:'1997년 이전 단지는 전기 용량 부족 사례 있음. 인테리어 시 전기 패널 교체 포함 여부 사전 확인'},
+  ]},
+  {id:'loc',em:'🗺️',nm:'입지·환경 임장',col:'#5B9BD5',
+   ds:'평일 저녁 + 주말 오전 두 번 방문 원칙 — 시간대에 따라 완전히 달라짐',
+   it:[
+    {id:'lo1',pr:'P2',tx:'역까지 실제 도보 체험 — 앱 예측 vs 실제 소요시간·경사·횡단보도 비교',
+     nt:'앱 10분 = 실체감 15분 되는 경우 빈번. 비 오는 날·겨울도 고려. 버스 환승 구간도 직접 체험'},
+    {id:'lo2',pr:'P2',tx:'출퇴근 시간대 대중교통 직접 탑승 — 혼잡도·소요시간 체험',
+     nt:'평일 아침 7:30~9:00 실제 탑승 권장. 앉아가는지 서서가는지 차이 큼'},
+    {id:'lo3',pr:'P2',tx:'소음 환경 — 큰 도로·철도 인접 여부 (저녁 7~9시 + 주말 오전 각각 확인)',
+     nt:'용구대로(8차선) 인접 단지는 창문 열면 차량 소음 심각. 평일 낮에만 방문하면 조용해 속음'},
+    {id:'lo4',pr:'P3',tx:'배정 초등학교 등굣길 — 횡단보도·경사·차량 흐름 직접 보행',
+     nt:'초품아(도로 미횡단) 여부가 학부모 선호도에 큰 영향. 학교알리미(schoolinfo.go.kr)에서 배정 확인'},
+    {id:'lo5',pr:'P3',tx:'혐오시설 반경 300m — 장례식장·유흥가·고압선·쓰레기처리장',
+     nt:'네이버 지도 로드뷰 사전 확인 후 현장 재확인. 매도 시 가격 10~20% 디스카운트 요인'},
+    {id:'lo6',pr:'P3',tx:'침수 이력 — 도로 대비 지대 낮은 곳·하천 인접 여부',
+     nt:'국토지리정보원 침수흔적도 검색 가능. 탄천·오리천 인접 단지는 과거 침수 이력 확인 필수'},
+    {id:'lo7',pr:'P3',tx:'인근 편의시설 영업 여부 직접 확인 — 마트·병원·약국·식당',
+     nt:'앱에 있어도 폐업한 곳 많음. 현장 확인 없이 믿으면 입주 후 당황 사례 빈번'},
+    {id:'lo8',pr:'P4',tx:'단지 분위기 체크 — 유아차·노약자 비율, 조경·놀이터 관리 상태',
+     nt:'30대 실거주 가족 비율 높은 단지는 관리 수준 좋은 편. 저녁 산책 시간대 15분 관찰 추천'},
+  ]},
+  {id:'agt',em:'💬',nm:'공인중개사 필수 질문 목록',col:'#8E7DBE',
+   ds:'중개사 2~3곳 방문 필수 — 같은 질문으로 답변 비교. 한 곳만 믿으면 안 됨',
+   it:[
+    {id:'a1',pr:'P1',es:true,tx:'"이 집 매도 이유가 뭔가요?" — 간접적으로라도 반드시 파악',
+     nt:'이사·급전이면 협상 여지 있음. 하자·이웃 갈등·재건축 무산 등 숨긴 이유 확인이 목적'},
+    {id:'a2',pr:'P1',tx:'"이 단지 이 평형 최근 3개월 실제 체결가가 얼마인가요?"',
+     nt:'국토부 공개 전 정보 보유. 호갱노노·KB와 다를 수 있음. 직접 물어야 현재 시장 흐름 파악 가능'},
+    {id:'a3',pr:'P2',tx:'"이 층·향 매물은 팔리는 데 보통 얼마나 걸리나요?"',
+     nt:'저층·동향은 6개월~1년 넘기는 경우도 있음. 답이 애매하거나 "금방 나가요"면 의심'},
+    {id:'a4',pr:'P2',tx:'"현재 전세 매물이 몇 개나 나와 있나요?"',
+     nt:'전세 공급 많음 = 투자 목적 매물 多 = 실거주 수요 약함. 협상 여지 있다는 신호'},
+    {id:'a5',pr:'P2',tx:'"임차인 보증금 금액·계약 만료일·명도 가능 시기가 정확히 언제인가요?"',
+     nt:'잔금일과 명도일 불일치 시 이중 주거비 발생. 명도 지연 가능성 있으면 잔금 조건 계약서에 명시'},
+    {id:'a6',pr:'P3',tx:'"이 단지 재건축·리모델링 조합 설립 추진 여부 아시나요?"',
+     nt:'1997~2000년 단지는 재건축 연한 도달. 조합 초기 단계면 기대 수익 있지만 완료까지 10~20년'},
+    {id:'a7',pr:'P3',tx:'"인근 소음 민원·혐오시설 이슈가 있는 단지인가요?"',
+     nt:'오래 영업한 중개사는 공식 데이터에 안 잡히는 이슈 알 가능성 높음'},
+  ]},
+];
+
+const BR=[
+  {id:'inc',ic:'💵',lb:'내 소득 기준 대출 실계산',col:'#E8B84B',
+   sb:'연소득 9,300만원 (원천징수) · 현금 4억 · 2026 스트레스 DSR 3단계 반영',
+   nd:[
+    {tp:'calc',tt:'📊 시중은행 생애최초 — DSR 한도 계산',
+     rw:[
+      {l:'연소득 (원천징수 기준)',v:'9,300만원',hi:true},
+      {l:'DSR 40% 연간 한도',v:'3,720만원/년 = 310만원/월'},
+      {l:'스트레스 가산금리 (수도권, 2025.10 강화)',v:'+3.0%p 적용',wn:true},
+      {l:'실제 금리 3.5% → DSR 심사 기준금리',v:'6.5%'},
+      {l:'대출 최대 한도 (스트레스 DSR 기준)',v:'약 4.7~4.9억',hi:true},
+      {l:'현금 4억 + 대출 4.9억 = 매수 가능 상한',v:'약 8.7~9억',hi:true},
+     ],wn:'스트레스 DSR은 실제 이자에 영향 없음 — 심사 기준만 높임. 실제 월 상환액은 실제 금리 3.5% 기준 적용.'},
+    {tp:'calc',tt:'📅 월 상환액 시뮬레이션 (실제 금리 3.5%, 30년 기준)',
+     rw:[
+      {l:'대출 3.5억',v:'월 약 157만원'},
+      {l:'대출 4.0억',v:'월 약 179만원'},
+      {l:'대출 4.3억 (죽전아이뷰 타깃)',v:'월 약 193만원 → 소득 대비 24.9%',hi:true},
+      {l:'대출 4.5억',v:'월 약 202만원'},
+      {l:'대출 4.9억 (한도 최대)',v:'월 약 220만원'},
+     ],wn:'⚠️ 외벌이 시뮬레이션 필수: 육아휴직 시 소득 ~5,000만원(월 417만원) → 193만원 = 46%. 매우 빡빡. 대출 4억 이하 권장.'},
+   ]},
+  {id:'elg',ic:'✅',lb:'자격 요건 확인',col:'#5B9BD5',
+   sb:'정책대출 기본 조건 — 소득 9,300만원 기준 해당 여부',
+   nd:[
+    {tp:'yn',q:'부부 모두 현재 무주택자인가? (오피스텔·분양권·입주권 포함 확인)',
+     dt:'오피스텔도 주거용 분리과세 선택 시 주택 수에 포함될 수 있음. 배우자 포함 전 세대원 무주택 여부 필수 확인',
+     y:'정책대출 기본 요건 충족 ✓',n:'기존 주택 처분 후 재신청 필요. 생애최초 취득세 감면도 불가'},
+    {tp:'yn',q:'2023년 1월 1일 이후 출생·입양 자녀가 있는가?',
+     dt:'있다면 신생아특례 디딤돌 0순위. 2025년 출산 가구 소득 기준 2.5억 이하 → 9,300만원 해당 → 최저 1.8%, 최대 4억',
+     y:'🎯 신생아특례 디딤돌 가능! 금리 1.8~4.5%, 최대 4억 → 8.3억대 매수 가능',
+     n:'디딤돌 신혼(8,500만원 이하)·보금자리론(7,000만원 이하) 소득 초과 → 시중은행 생애최초 주담대 검토'},
+    {tp:'yn',q:'부부합산 순자산이 5.11억 이하인가? (2026년 기준)',
+     dt:'순자산 = 부동산 + 금융자산 + 자동차 - 부채. 현금 4억 + 기타 자산이 5.11억 이하인지 확인',
+     y:'신생아특례·정책대출 신청 자격 충족 ✓',n:'정책금리 대출 불가 → 시중은행 일반 주담대만 가능'},
+   ]},
+  {id:'ln',ic:'🏦',lb:'대출 상품 선택',col:'#8E7DBE',
+   sb:'소득 9,300만원 기준 실제 사용 가능 상품 — 우선순위순',
+   nd:[
+    {tp:'prod',bg:'0순위 (자녀 有)',bc:'s0',nm:'신생아특례 디딤돌',
+     cd:'2023.1.1 이후 자녀 + 소득 2.5억 이하 + 순자산 5.11억 이하',
+     rs:'최대 4억 · 금리 1.8~4.5%(5년 특례) · LTV 70% · DTI 60% · 스트레스DSR 미적용',
+     rc:'#E8B84B',
+     dt:'수도권 주택가액 9억 이하. 중도상환수수료 2026.12.31까지 면제. 출산 1명 추가 시 특례 5년 연장(최대 15년). 4억 + 현금 4억 = 8억대 매수 가능'},
+    {tp:'prod',bg:'1순위 (자녀 無)',bc:'s1',nm:'시중은행 생애최초 주담대',
+     cd:'무주택 + 생애최초 · 소득 제한 없음',
+     rs:'LTV 70%(수도권) · DSR 40% + 스트레스 +3%p · 실제 한도 약 4.7~4.9억',
+     rc:'#5B9BD5',
+     dt:'죽전아이뷰 8.3억 → 4.3억 대출 → 월 193만원(3.5%·30년) → 소득 대비 24.9% 안정적.\n동성1차 9억 → 5억 필요 → DSR 초과 가능성, 협상 통해 8.5억 이하로 낮춰야 함'},
+    {tp:'prod',bg:'불가 (소득 초과)',bc:'sx',nm:'디딤돌 신혼 · 보금자리론',
+     cd:'디딤돌 신혼: 8,500만원 이하 / 보금자리론: 7,000만원 이하',
+     rs:'소득 9,300만원 → 두 상품 모두 소득 기준 초과',
+     rc:'#6B7280',
+     dt:'보금자리론 생애최초 특례(소득 무관) 조건 별도 존재 여부를 한국주택금융공사(1688-8114)에 직접 문의 권장'},
+   ]},
+  {id:'prp',ic:'🏠',lb:'매물 비교 — 죽전아이뷰 vs 동성1차',col:'#E07B4A',
+   sb:'소득 9,300만원 · 현금 4억 기준 두 매물 실전 비교',
+   nd:[
+    {tp:'cmp',al:'죽전아이뷰',bl:'동성1차',
+     rw:[
+      {l:'호가',a:'8.3억',b:'9.0억'},
+      {l:'KB시세 (26.5월)',a:'8.2억',b:'8.5억'},
+      {l:'호가-시세 차이',a:'+0.1억 ✓ 합리적',b:'+0.5억 ⚠ 비쌈',bb:true},
+      {l:'전용60㎡ 실거래 최고가',a:'확인 필요',b:'7.4억 (26.1·16층)'},
+      {l:'층/향',a:'2층 / 동향',b:'9층 / 향 확인 필요'},
+      {l:'리모델링',a:'즉시 거주 가능 추정',b:'2,500~5,000만원 예상',bb:true},
+      {l:'필요 대출액',a:'4.3억 (DSR 내 ✓)',b:'5.0억 (DSR 한계)',bb:true},
+      {l:'월 상환액 (3.5%·30년)',a:'약 193만원',b:'약 225만원'},
+      {l:'실총투입',a:'8.3억 + 부대비 ~1,500만원',b:'9.0억 + 리모델링 3,000만원 + 부대비 ≈ 9.45억',bb:true},
+     ]},
+    {tp:'yn',q:'호가가 국토부 실거래 최근 6개월 최고가 이하인가?',
+     dt:'동성1차 전용60㎡ 실거래 최고가: 7.4억 (2026.1.15, 16층)\n호가 9억은 실거래 최고가보다 1.6억 높음\n협상 목표: 최소 8.5억 이하로 낮춰야 합리적 진입',
+     y:'합리적 진입가 ✓ (죽전아이뷰 해당)',n:'협상 또는 패스 권장 (동성1차 현 호가 9억 해당)'},
+    {tp:'yn',q:'2층 동향 매물의 경우 — 같은 단지 중층 대비 충분히 낮은 가격인가?',
+     dt:'저층(2층 이하)은 중층 대비 보통 5~10% 낮게 거래됨\n죽전아이뷰 중층이 8.7~9억대라면 2층 8.3억은 디스카운트 적정\n만약 중층도 8.3억대면 저층 메리트 없음 → 같은 단지 중층 매물 재탐색',
+     y:'저층 디스카운트 충분히 반영 ✓',n:'중층과 가격 차이 없으면 중층 매물 재탐색'},
+   ]},
+  {id:'bdg',ic:'🧮',lb:'예산 계획',col:'#2BAE8E',
+   sb:'실투입 총액 산출 — 부대비용·리모델링 포함',
+   nd:[
+    {tp:'yn',q:'취득세·중개보수·이사비 등 부대비용을 별도로 확보했는가?',
+     dt:'생애최초 취득세 감면: 3억 이하 100% 면제 / 3~9억 50% 감면(한도 200만원)\n8.3억 기준 추정 부대비용:\n취득세(감면 후) 약 960만원 + 중개보수 최대 400만원 + 이사비 100~200만원 + 법무사 50~100만원 = 약 1,500~1,700만원',
+     y:'부대비 포함 실투입 파악 완료 ✓',n:'8억대 기준 약 1,500만원 추가 자금 필요. 현금 4억에서 선공제 후 잔액으로 대출 역산'},
+    {tp:'yn',q:'구축 매수 시 리모델링 비용도 예산에 포함했는가?',
+     dt:'1997년 단지(동성1차) 23평 리모델링 비용:\n부분(욕실2+주방+도배장판): 2,500~4,000만원\n전체(새시 포함): 5,000~8,000만원\n→ 동성1차 호가 9억 + 리모델링 3,000만원 + 부대비 1,500만원 = 실투입 9.45억',
+     y:'리모델링 포함 실투입 파악 완료 ✓',n:'구축 몸테크 시 추가 2,500~5,000만원 예비 자금 필요'},
+   ]},
+  {id:'rsk',ic:'⚡',lb:'리스크 관리',col:'#D4506A',
+   sb:'영끌 전 반드시 확인할 4가지',
+   nd:[
+    {tp:'yn',q:'출산·육아휴직 후 외벌이 기준으로도 상환이 가능한가?',
+     dt:'맞벌이 9,300만원 → 월 193만원(4.3억 기준) = 24.9% → 편안\n외벌이(소득 ~5,000만원) → 월소득 417만원 → 193만원 = 46.3% → 매우 빡빡\n전문가 권장: 외벌이 기준 상환 비율 30% 이하 → 3.5억 대출 이하가 안전권',
+     y:'외벌이 기준도 상환 가능 ✓',n:'대출 3.5~4억 이하로 축소 권장. 매수가 협상 또는 매물 재검토'},
+    {tp:'yn',q:'금리 1~2%p 추가 인상 시에도 상환이 가능한가?',
+     dt:'4.3억 대출 기준 금리별 월 상환액:\n3.5% → 193만원 / 4.5% → 218만원 / 5.5% → 244만원\n→ 고정금리 상품(신생아특례 디딤돌·보금자리론) 우선 선택 이유',
+     y:'금리 인상 리스크 감내 가능 ✓',n:'고정금리 상품 우선 선택. 변동금리 선택 시 2%p 인상 시뮬레이션 미리 확인'},
+    {tp:'yn',q:'잔금 당일 오전 최신 등기부등본을 다시 발급했는가?',
+     dt:'계약 후 잔금 전 사이에 추가 근저당·가압류 설정되는 실제 사례 있음\n잔금 당일 오전 최신 등기부등본 1회 추가 열람 필수\n이상 발견 시 잔금 지급 중단 권리 있음',
+     y:'잔금 당일 최종 등기부 확인 완료 ✓',n:'반드시 잔금 당일 오전 열람 — 이것만 빠져도 낭패 가능'},
+    {tp:'yn',q:'계약서에 4가지 특약사항을 넣었는가?',
+     dt:'① 잔금 전 선순위 대출 전액 말소 조건\n② 임차인 명도 완료 후 잔금 지급\n③ 관리비 체납액 완납 후 잔금\n④ 하자 발생 시 책임 귀속 조항',
+     y:'특약 4가지 포함 완료 ✓',n:'공인중개사에게 반드시 삽입 요청. 계약서 날인 전 재확인'},
+   ]},
+];
+
+// ─── STATE ───────────────────────────────────────
+let S={
+  checked:JSON.parse(localStorage.getItem('hbg2_ck')||'{}'),
+  openCat:{legal:true},
+  openBr:{inc:true},
+  openIt:{},
+  openDt:{}
+};
+function save(){localStorage.setItem('hbg2_ck',JSON.stringify(S.checked))}
+
+// ─── HELPERS ───────────────────────────────────────
+function ring(pct,col,sz=58){
+  const r=(sz-8)/2,ci=2*Math.PI*r,off=ci-(pct/100)*ci;
+  return `<svg width="${sz}" height="${sz}" style="transform:rotate(-90deg);flex-shrink:0"><circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="none" stroke="#1E2D3F" stroke-width="5"/><circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="none" stroke="${col}" stroke-width="5" stroke-dasharray="${ci}" stroke-dashoffset="${off}" style="transition:stroke-dashoffset .5s ease" stroke-linecap="round"/></svg>`;
+}
+function prog(){
+  const t=CL.reduce((s,c)=>s+c.it.length,0);
+  const d=Object.values(S.checked).filter(Boolean).length;
+  const bc={};CL.forEach(c=>{const x=c.it.filter(i=>S.checked[i.id]).length;bc[c.id]={d:x,t:c.it.length,p:Math.round(x/c.it.length*100)};});
+  return{t,d,p:Math.round(d/t*100),bc};
+}
+function esDone(){return CL.flatMap(c=>c.it.filter(i=>i.es).map(i=>i.id)).every(id=>S.checked[id])}
+
+// ─── RENDER CHECKLIST ───────────────────────────────────────
+function rCL(){
+  const pg=prog(),ed=esDone();
+  let h=`
+  <div class="legend">
+    <div class="legend-ttl">우선순위 기준</div>
+    <div class="legend-row">
+      <span class="bdg p1">P1 필수</span><span class="bdg p2">P2 중요</span><span class="bdg p3">P3 확인</span><span class="bdg p4">P4 참고</span>
+      <span class="bdg ess">계약 필수 = 미확인 시 법적 손실 위험</span>
+    </div>
+  </div>
+  <div class="prg-wrap">
+    <div class="ring-box" id="rbox">${ring(pg.p,'#E8B84B',58)}<div class="ring-lbl" id="rpct">${pg.p}%</div></div>
+    <div class="prg-info">
+      <div class="prg-title" id="ptit">전체 진행률 ${pg.d}/${pg.t}</div>
+      <div class="prg-status" id="psts" style="color:${ed?'#34D399':'#FCA5A5'}">${ed?'✅ 계약 필수 항목 모두 완료!':'⚠️ 빨간 계약 필수 항목을 먼저 확인하세요'}</div>
+      <div class="prg-bar"><div class="prg-fill" id="pfll" style="width:${pg.p}%"></div></div>
+    </div>
+  </div>`;
+
+  CL.forEach(cat=>{
+    const p=pg.bc[cat.id],op=!!S.openCat[cat.id];
+    h+=`<div class="cat-wrap" id="cw-${cat.id}">
+      <button class="cat-btn${op?' on':''}" onclick="tCat('${cat.id}')" style="border-color:${op?cat.col+'55':'rgba(255,255,255,.06)'}">
+        <span class="cat-emoji">${cat.em}</span>
+        <div class="cat-inf">
+          <div class="cat-name" style="color:${cat.col}">${cat.nm}</div>
+          <div class="cat-desc">${cat.ds}</div>
+          <div class="cat-bar-wrap"><div class="cat-bar-fill" id="cbf-${cat.id}" style="width:${p.p}%;background:${cat.col}"></div></div>
+        </div>
+        <div class="cat-meta">
+          <span class="cat-cnt" id="cct-${cat.id}">${p.d}/${p.t}</span>
+          <div class="cat-chev" id="cch-${cat.id}" style="background:${cat.col}22;color:${cat.col}">${op?'▲':'▼'}</div>
+        </div>
+      </button>
+      <div class="cat-items${op?' on':''}" id="ci-wrap-${cat.id}" style="border-color:${cat.col}30">`;
+    cat.it.forEach(it=>{
+      const ck=!!S.checked[it.id],pr=PRI[it.pr],op2=!!S.openIt[it.id];
+      h+=`<div class="ci" id="ci-${it.id}" style="border-color:${ck?cat.col+'44':'rgba(255,255,255,.06)'}">
+        <div class="ci-row" onclick="tCk('${it.id}','${cat.col}')">
+          <div class="ci-circle" id="crc-${it.id}" style="border-color:${cat.col};background:${ck?cat.col:'transparent'}">${ck?'✓':''}</div>
+          <div class="ci-body">
+            <div class="ci-bdgs"><span class="bdg ${pr.c}">${pr.l}</span>${it.es&&!ck?`<span class="bdg ess">계약 필수</span>`:''}</div>
+            <div class="ci-txt${ck?' done':''}" id="ctx-${it.id}">${it.tx}</div>
+          </div>
+          <button class="ci-exp" id="cex-${it.id}" onclick="event.stopPropagation();tIt('${it.id}')">${op2?'▲':'▼'}</button>
+        </div>
+        <div class="ci-note${op2?' on':''}" id="cn-${it.id}" style="border-top-color:${cat.col}20"><p>💡 ${it.nt}</p></div>
+      </div>`;
+    });
+    h+=`</div></div>`;
+  });
+
+  h+=`<div class="tip"><p>📌 <strong style="color:#D1D5DB">임장 황금 원칙</strong>: 동일 매물을 <strong style="color:#E8B84B">평일 저녁(7~9시) + 주말 오전(10~12시)</strong> 두 번 방문. 공인중개사 <strong style="color:#E8B84B">2~3곳 비교</strong> 및 관리사무소 직접 방문 — 장기수선충당금·관리비 고지서 서면 요청.</p></div>`;
+  document.getElementById('p0').innerHTML=h;
+}
+
+// ─── RENDER MINDMAP ───────────────────────────────────────
+function rMM(){
+  let h=`<div class="center-nd">
+    <div class="c-icon">🏠</div>
+    <div class="c-title">생애최초 신혼부부 매매 의사결정</div>
+    <div class="c-sub">연소득 9,300만원 · 현금 4억 · 2026 최신 기준</div>
+    <div class="c-tags">
+      ${[['대출 실계산','#E8B84B'],['자격 확인','#5B9BD5'],['상품 선택','#8E7DBE'],['매물 비교','#E07B4A'],['예산 계획','#2BAE8E'],['리스크','#D4506A']].map(([l,c])=>`<span class="c-tag" style="background:${c}20;color:${c};border:1px solid ${c}30">${l}</span>`).join('')}
+    </div>
+  </div>`;
+
+  BR.forEach(br=>{
+    const op=!!S.openBr[br.id];
+    h+=`<div class="br-wrap" id="bw-${br.id}">
+      <button class="br-btn${op?' on':''}" onclick="tBr('${br.id}')" style="border-color:${op?br.col+'70':'rgba(255,255,255,.06)'}">
+        <div class="br-icon" style="background:${br.col}20">${br.ic}</div>
+        <div class="br-inf"><div class="br-lbl" style="color:${br.col}">${br.lb}</div><div class="br-sub">${br.sb}</div></div>
+        <div class="br-chev" id="bch-${br.id}" style="background:${br.col}20;color:${br.col}">${op?'▲':'▼'}</div>
+      </button>
+      <div class="br-body${op?' on':''}" id="bb-${br.id}" style="border-color:${br.col}35">`;
+
+    br.nd.forEach((nd,ni)=>{
+      const dk=`${br.id}_${ni}`,dop=!!S.openDt[dk];
+      if(nd.tp==='calc'){
+        h+=`<div class="nd" style="border:1px solid ${br.col}30">
+          <div class="nd-in">
+            <div class="nd-ttl">${nd.tt}</div>
+            ${nd.rw.map(r=>`<div class="calc-row" style="background:${r.hi?br.col+'18':r.wn?'#3D1515':'#0D1720'}">
+              <span class="calc-lbl" style="color:${r.wn?'#FCA5A5':'#9CA3AF'}">${r.l}</span>
+              <span class="calc-val" style="color:${r.hi?br.col:r.wn?'#FCA5A5':'#D1D5DB'};font-weight:${r.hi?700:500}">${r.v}</span>
+            </div>`).join('')}
+          </div>
+          ${nd.wn?`<div class="warn-box" style="background:#1A1500;border-top-color:${br.col}20"><p>${nd.wn}</p></div>`:''}
+        </div>`;
+      } else if(nd.tp==='cmp'){
+        h+=`<div class="nd" style="border:1px solid ${br.col}30">
+          <table class="cmp-tbl">
+            <tr class="cmp-hd" style="border-bottom:1px solid ${br.col}25">
+              <th style="font-size:11px;color:#6B7280;text-align:left;padding:8px 12px">항목</th>
+              <th style="font-size:12px;font-weight:700;color:#5B9BD5;text-align:center;padding:8px 4px">${nd.al}</th>
+              <th style="font-size:12px;font-weight:700;color:#E07B4A;text-align:center;padding:8px 12px 8px 4px">${nd.bl}</th>
+            </tr>
+            ${nd.rw.map((r,i)=>`<tr class="cmp-tr ${i%2===0?'e':'o'}">
+              <td style="padding:7px 12px;font-size:11px;color:#9CA3AF">${r.l}</td>
+              <td class="a" style="padding:7px 4px">${r.a}</td>
+              <td class="b${r.bb?' bad':''}" style="padding:7px 12px 7px 4px">${r.b}</td>
+            </tr>`).join('')}
+          </table>
+        </div>`;
+      } else if(nd.tp==='prod'){
+        h+=`<div class="prod" style="border:1px solid ${br.col}30">
+          <div class="prod-in">
+            <div class="prod-hdr"><span class="bdg pill ${nd.bc}">${nd.bg}</span><span class="prod-name">${nd.nm}</span></div>
+            <div class="prod-cond">${nd.cd}</div>
+            <div class="prod-res" style="background:${br.col}18"><p style="color:${nd.rc}">${nd.rs}</p></div>
+          </div>
+          ${nd.dt?`<button class="dt-btn" id="dtb-${dk}" onclick="tDt('${dk}')" style="border-top-color:${br.col}20">💡 상세 ${dop?'접기▲':'보기▼'}</button>
+          <div class="dt-panel${dop?' on':''}" id="dp-${dk}"><p>${nd.dt}</p></div>`:''}
+        </div>`;
+      } else if(nd.tp==='yn'){
+        h+=`<div class="nd" style="border:1px solid ${br.col}30">
+          <div class="nd-in">
+            <div class="yn-q">${nd.q}</div>
+            <div class="yn-grid">
+              <div class="yn-y"><div class="yn-lbl">YES ✓</div><p>${nd.y}</p></div>
+              <div class="yn-n"><div class="yn-lbl">NO ✗</div><p>${nd.n}</p></div>
+            </div>
+          </div>
+          ${nd.dt?`<button class="dt-btn" id="dtb-${dk}" onclick="tDt('${dk}')" style="border-top-color:${br.col}20">💡 상세 ${dop?'접기▲':'보기▼'}</button>
+          <div class="dt-panel${dop?' on':''}" id="dp-${dk}"><p>${nd.dt}</p></div>`:''}
+        </div>`;
+      }
+    });
+    h+=`</div></div>`;
+  });
+
+  h+=`<div class="src"><p>📰 <strong style="color:#9CA3AF">참고 출처</strong>: 한국주택금융공사 보금자리론 (hf.go.kr, 2026.05) · 주택도시기금 신생아특례 디딤돌 (myhome.go.kr) · 홈두부 2026 생애최초 대출 총정리 · 뱅크샐러드 스트레스DSR·신생아특례 (2026.01) · 토스피드 DSR 계산기 · 아파트랭킹 국토부 실거래가 (2026.03) · KB부동산 임장 가이드 (2025.12) · 집품 임장 체크리스트 (2025.08)</p></div>`;
+  document.getElementById('p1').innerHTML=h;
+}
+
+// ─── INTERACTIONS ───────────────────────────────────────
+function switchTab(i){
+  ['p0','p1','p2','p3'].forEach((id,j)=>{document.getElementById(id).classList.toggle('on',j===i)});
+  ['tb0','tb1','tb2','tb3'].forEach((id,j)=>{document.getElementById(id).classList.toggle('on',j===i)});
+  if(i===2) rMemoTab();
+  if(i===3) rCompTab();
+}
+function tCat(id){
+  S.openCat[id]=!S.openCat[id];
+  const op=S.openCat[id],cat=CL.find(c=>c.id===id);
+  document.querySelector(`#cw-${id} .cat-btn`).classList.toggle('on',op);
+  document.querySelector(`#cw-${id} .cat-btn`).style.borderColor=op?cat.col+'55':'rgba(255,255,255,.06)';
+  document.getElementById(`ci-wrap-${id}`).classList.toggle('on',op);
+  document.getElementById(`cch-${id}`).textContent=op?'▲':'▼';
+}
+function tCk(id,col){
+  S.checked[id]=!S.checked[id];save();
+  const ck=S.checked[id];
+  const ci=document.getElementById(`ci-${id}`);
+  ci.style.borderColor=ck?col+'44':'rgba(255,255,255,.06)';
+  const cr=document.getElementById(`crc-${id}`);
+  cr.style.background=ck?col:'transparent';cr.textContent=ck?'✓':'';
+  document.getElementById(`ctx-${id}`).classList.toggle('done',ck);
+  const it=CL.flatMap(c=>c.it).find(i=>i.id===id);
+  if(it&&it.es){const eb=ci.querySelector('.ess');if(eb)eb.style.display=ck?'none':'inline-block';}
+  upPrg();
+}
+function upPrg(){
+  const pg=prog(),ed=esDone();
+  document.getElementById('rbox').innerHTML=ring(pg.p,'#E8B84B',58)+`<div class="ring-lbl" id="rpct">${pg.p}%</div>`;
+  document.getElementById('ptit').textContent=`전체 진행률 ${pg.d}/${pg.t}`;
+  const ps=document.getElementById('psts');
+  ps.style.color=ed?'#34D399':'#FCA5A5';
+  ps.textContent=ed?'✅ 계약 필수 항목 모두 완료!':'⚠️ 빨간 계약 필수 항목을 먼저 확인하세요';
+  document.getElementById('pfll').style.width=pg.p+'%';
+  CL.forEach(c=>{
+    const p=pg.bc[c.id];
+    const bf=document.getElementById(`cbf-${c.id}`);
+    const ct=document.getElementById(`cct-${c.id}`);
+    if(bf)bf.style.width=p.p+'%';
+    if(ct)ct.textContent=`${p.d}/${p.t}`;
+  });
+}
+function tIt(id){
+  S.openIt[id]=!S.openIt[id];
+  document.getElementById(`cn-${id}`).classList.toggle('on',S.openIt[id]);
+  document.getElementById(`cex-${id}`).textContent=S.openIt[id]?'▲':'▼';
+}
+function tBr(id){
+  S.openBr[id]=!S.openBr[id];
+  const op=S.openBr[id],br=BR.find(b=>b.id===id);
+  document.querySelector(`#bw-${id} .br-btn`).classList.toggle('on',op);
+  document.querySelector(`#bw-${id} .br-btn`).style.borderColor=op?br.col+'70':'rgba(255,255,255,.06)';
+  document.getElementById(`bb-${id}`).classList.toggle('on',op);
+  document.getElementById(`bch-${id}`).textContent=op?'▲':'▼';
+}
+function tDt(dk){
+  S.openDt[dk]=!S.openDt[dk];
+  document.getElementById(`dp-${dk}`).classList.toggle('on',S.openDt[dk]);
+  document.getElementById(`dtb-${dk}`).textContent=`💡 상세 ${S.openDt[dk]?'접기▲':'보기▼'}`;
+}
+
+// ─── INIT ───────────────────────────────────────
+rCL();rMM();
+
+// ════════════════════════════════════════════════
+// 📝 MEMO TAB
+// ════════════════════════════════════════════════
+const MEMO_SECTIONS=[
+  {k:'legal',   lb:'⚖️ 법적확인', ph:'등기부등본, 임차인, 특이사항...'},
+  {k:'complex', lb:'🏢 단지상태', ph:'관리상태, 주차, 엘리베이터, 충당금...'},
+  {k:'interior',lb:'🔍 내부하자', ph:'누수, 곰팡이, 샷시, 난방방식...'},
+  {k:'location', lb:'🗺️ 입지환경', ph:'역 거리, 소음, 학군, 편의시설...'},
+  {k:'overall',  lb:'✍️ 총평',    ph:'전반적인 인상, 장단점, 결론...'},
+];
+
+function loadProps(){return JSON.parse(localStorage.getItem('hbg_props')||'[]')}
+function savePropsData(arr){
+  try{localStorage.setItem('hbg_props',JSON.stringify(arr));return true;}
+  catch(e){alert('저장 공간이 부족합니다. 사진을 일부 삭제해주세요.');return false;}
+}
+function genId(){return 'p'+Date.now()+Math.random().toString(36).slice(2,6)}
+function starHtml(rating,filled='★',empty='☆'){
+  return [1,2,3,4,5].map(n=>n<=rating?`<span style="color:#E8B84B">${filled}</span>`:`<span style="color:#374151">${empty}</span>`).join('');
+}
+function scoreClass(r){return r>=5?'score-5':r>=4?'score-4':r>=3?'score-3':r>=2?'score-2':r>=1?'score-1':'score-0'}
+function borderClass(r){return r>=5?'border-5':r>=4?'border-4':r>=3?'border-3':r>=2?'border-2':r>=1?'border-1':'border-0'}
+
+// 이미지 압축 (max 500px, JPEG 0.65)
+async function compressImg(file){
+  return new Promise(res=>{
+    const rd=new FileReader();
+    rd.onload=e=>{
+      const img=new Image();
+      img.onload=()=>{
+        const MAX=500;let w=img.width,h=img.height;
+        if(w>h&&w>MAX){h=h*MAX/w;w=MAX;}else if(h>MAX){w=w*MAX/h;h=MAX;}
+        const cv=document.createElement('canvas');cv.width=w;cv.height=h;
+        cv.getContext('2d').drawImage(img,0,0,w,h);
+        res(cv.toDataURL('image/jpeg',0.65));
+      };
+      img.src=e.target.result;
+    };
+    rd.readAsDataURL(file);
+  });
+}
+
+function rMemoTab(){
+  const props=loadProps();
+  let h=`<div class="memo-toolbar">
+    <button class="btn-add" onclick="addProp()">＋ 매물 추가</button>
+    <button class="btn-exp" onclick="exportProps()">📤 내보내기</button>
+  </div>`;
+  if(!props.length){
+    h+=`<div class="empty-msg"><div class="em-icon">🏠</div>아직 추가된 매물이 없어요.<br>＋ 매물 추가 버튼으로 시작하세요!</div>`;
+  } else {
+    props.forEach((p,idx)=>{
+      const openSec=p.openSec||'overall';
+      h+=`<div class="prop-card" id="pc-${p.id}">
+        <div class="prop-card-hdr">
+          <div class="prop-num">${idx+1}</div>
+          <input class="prop-name-inp" placeholder="매물명 (예: 죽전아이뷰 103동 2층)"
+            value="${esc(p.name||'')}" oninput="setPF('${p.id}','name',this.value)">
+          <button class="prop-del" onclick="delProp('${p.id}')" title="삭제">✕</button>
+        </div>
+
+        <div class="prop-stars">
+          ${[1,2,3,4,5].map(n=>`<button class="star-btn" onclick="setRating('${p.id}',${n})">${n<=(p.rating||0)?'★':'☆'}</button>`).join('')}
+          <span style="font-size:11px;color:var(--muted);margin-left:6px;align-self:center">${p.rating?p.rating+'점':'별점 미설정'}</span>
+        </div>
+
+        <div class="prop-fields">
+          <div class="prop-field"><div class="fld-lbl">호가</div>
+            <input class="fld-inp" placeholder="8억 3,000" value="${esc(p.price||'')}" oninput="setPF('${p.id}','price',this.value)"></div>
+          <div class="prop-field"><div class="fld-lbl">전용면적</div>
+            <input class="fld-inp" placeholder="59㎡ (23평)" value="${esc(p.area||'')}" oninput="setPF('${p.id}','area',this.value)"></div>
+          <div class="prop-field"><div class="fld-lbl">층 / 향</div>
+            <input class="fld-inp" placeholder="9층 / 남향" value="${esc(p.floor||'')}" oninput="setPF('${p.id}','floor',this.value)"></div>
+          <div class="prop-field"><div class="fld-lbl">입주연도</div>
+            <input class="fld-inp" placeholder="1997년" value="${esc(p.year||'')}" oninput="setPF('${p.id}','year',this.value)"></div>
+          <div class="prop-field full"><div class="fld-lbl">주소</div>
+            <input class="fld-inp" placeholder="경기도 용인시 수지구 죽전동..." value="${esc(p.address||'')}" oninput="setPF('${p.id}','address',this.value)"></div>
+          <div class="prop-field full"><div class="fld-lbl">부동산 링크</div>
+            <div class="link-row">
+              <input class="fld-inp" placeholder="https://naver.me/..." value="${esc(p.link||'')}" oninput="setPF('${p.id}','link',this.value)" style="flex:1">
+              ${p.link?`<a href="${esc(p.link)}" target="_blank" class="link-btn">열기 ↗</a>`:''}
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-section">
+          <div class="photo-ttl">📸 사진 (최대 3장)</div>
+          <div class="photo-row" id="ph-row-${p.id}">
+            ${(p.photos||[]).map((src,i)=>`
+              <div class="photo-thumb">
+                <img src="${src}">
+                <button class="photo-del" onclick="delPhoto('${p.id}',${i})">✕</button>
+              </div>`).join('')}
+            ${(p.photos||[]).length<3?`
+              <label class="photo-add-btn">
+                <span>📷</span>사진 추가
+                <input type="file" accept="image/*" style="display:none" onchange="addPhoto('${p.id}',this)">
+              </label>`:''}
+          </div>
+        </div>
+
+        <div class="memo-section">
+          <div class="memo-tabs-row">
+            ${MEMO_SECTIONS.map(s=>`<button class="memo-tab-btn${openSec===s.k?' on':''}" onclick="setMemSec('${p.id}','${s.k}')">${s.lb}</button>`).join('')}
+          </div>
+          ${MEMO_SECTIONS.map(s=>`
+          <textarea class="memo-textarea" style="display:${openSec===s.k?'block':'none'}"
+            id="mt-${p.id}-${s.k}" placeholder="${s.ph}"
+            oninput="setMemo('${p.id}','${s.k}',this.value)">${esc(p.memos&&p.memos[s.k]||'')}</textarea>`).join('')}
+        </div>
+
+        <div class="prop-card-footer">
+          <div class="rating-display">${starHtml(p.rating||0)}</div>
+          <span class="score-lbl">${p.name||'이름 없는 매물'}</span>
+        </div>
+      </div>`;
+    });
+  }
+  document.getElementById('p2').innerHTML=h;
+}
+
+function addProp(){
+  const props=loadProps();
+  props.push({id:genId(),name:'',address:'',price:'',area:'',floor:'',year:'',link:'',rating:0,photos:[],memos:{},openSec:'overall'});
+  savePropsData(props);rMemoTab();
+  // 새 카드로 스크롤
+  setTimeout(()=>{const cards=document.querySelectorAll('.prop-card');if(cards.length)cards[cards.length-1].scrollIntoView({behavior:'smooth',block:'start'});},100);
+}
+
+function delProp(id){
+  if(!confirm('이 매물을 삭제할까요?'))return;
+  let props=loadProps();props=props.filter(p=>p.id!==id);savePropsData(props);rMemoTab();
+}
+
+function setPF(id,field,val){
+  const props=loadProps();const p=props.find(x=>x.id===id);if(!p)return;
+  p[field]=val;savePropsData(props);
+  // 링크 버튼 즉시 업데이트
+  if(field==='link'){
+    const row=document.querySelector(`#pc-${id} .link-row`);
+    if(row){const btn=row.querySelector('.link-btn');
+      if(val&&!btn){const a=document.createElement('a');a.href=val;a.target='_blank';a.className='link-btn';a.innerHTML='열기 ↗';row.appendChild(a);}
+      else if(!val&&btn)btn.remove();
+      else if(val&&btn)btn.href=val;
+    }
+  }
+}
+
+function setRating(id,stars){
+  const props=loadProps();const p=props.find(x=>x.id===id);if(!p)return;
+  p.rating=stars;savePropsData(props);
+  // 별점 UI 즉시 업데이트
+  const starsEl=document.querySelector(`#pc-${id} .prop-stars`);
+  if(starsEl){
+    const btns=starsEl.querySelectorAll('.star-btn');
+    btns.forEach((b,i)=>{b.textContent=i<stars?'★':'☆';b.style.color=i<stars?'#E8B84B':'';});
+    const lbl=starsEl.querySelector('span');if(lbl)lbl.textContent=stars+'점';
+  }
+  const footer=document.querySelector(`#pc-${id} .rating-display`);
+  if(footer)footer.innerHTML=starHtml(stars);
+}
+
+function setMemSec(id,sec){
+  const props=loadProps();const p=props.find(x=>x.id===id);if(!p)return;
+  p.openSec=sec;savePropsData(props);
+  // 탭 UI 업데이트
+  const card=document.getElementById(`pc-${id}`);if(!card)return;
+  card.querySelectorAll('.memo-tab-btn').forEach((b,i)=>b.classList.toggle('on',MEMO_SECTIONS[i].k===sec));
+  card.querySelectorAll('.memo-textarea').forEach((ta,i)=>ta.style.display=MEMO_SECTIONS[i].k===sec?'block':'none');
+}
+
+function setMemo(id,sec,val){
+  const props=loadProps();const p=props.find(x=>x.id===id);if(!p)return;
+  if(!p.memos)p.memos={};p.memos[sec]=val;savePropsData(props);
+}
+
+async function addPhoto(id,input){
+  if(!input.files||!input.files[0])return;
+  const props=loadProps();const p=props.find(x=>x.id===id);if(!p)return;
+  if((p.photos||[]).length>=3){alert('사진은 최대 3장까지 추가할 수 있어요.');return;}
+  const b64=await compressImg(input.files[0]);
+  if(!p.photos)p.photos=[];p.photos.push(b64);
+  if(!savePropsData(props))return;
+  // 사진 행 업데이트
+  const row=document.getElementById(`ph-row-${id}`);
+  if(row){
+    const thumb=document.createElement('div');thumb.className='photo-thumb';
+    const idx=p.photos.length-1;
+    thumb.innerHTML=`<img src="${b64}"><button class="photo-del" onclick="delPhoto('${id}',${idx})">✕</button>`;
+    const addBtn=row.querySelector('label');
+    if(addBtn)row.insertBefore(thumb,addBtn);else row.appendChild(thumb);
+    if(p.photos.length>=3&&addBtn)addBtn.remove();
+  }
+}
+
+function delPhoto(id,idx){
+  const props=loadProps();const p=props.find(x=>x.id===id);if(!p)return;
+  p.photos.splice(idx,1);savePropsData(props);
+  const row=document.getElementById(`ph-row-${id}`);
+  if(row){
+    const thumbs=row.querySelectorAll('.photo-thumb');
+    if(thumbs[idx])thumbs[idx].remove();
+    // 삭제 버튼 인덱스 재할당
+    row.querySelectorAll('.photo-thumb').forEach((t,i)=>{
+      const btn=t.querySelector('.photo-del');if(btn)btn.setAttribute('onclick',`delPhoto('${id}',${i})`);
+    });
+    // 3장 미만이면 추가 버튼 복원
+    if(p.photos.length<3&&!row.querySelector('label')){
+      const lbl=document.createElement('label');lbl.className='photo-add-btn';
+      lbl.innerHTML=`<span>📷</span>사진 추가<input type="file" accept="image/*" style="display:none" onchange="addPhoto('${id}',this)">`;
+      row.appendChild(lbl);
+    }
+  }
+}
+
+function exportProps(){
+  const props=loadProps();
+  if(!props.length){alert('저장된 매물이 없어요.');return;}
+  let txt='🏠 내집마련 임장 메모\n'+'='.repeat(40)+'\n생성일: '+new Date().toLocaleDateString('ko-KR')+'\n\n';
+  props.forEach((p,i)=>{
+    txt+=`[${i+1}] ${p.name||'이름 없는 매물'}\n`;
+    txt+='─'.repeat(30)+'\n';
+    if(p.price) txt+=`호가: ${p.price}\n`;
+    if(p.area)  txt+=`면적: ${p.area}\n`;
+    if(p.floor) txt+=`층/향: ${p.floor}\n`;
+    if(p.year)  txt+=`입주연도: ${p.year}\n`;
+    if(p.address)txt+=`주소: ${p.address}\n`;
+    if(p.link)  txt+=`링크: ${p.link}\n`;
+    if(p.rating)txt+=`별점: ${'★'.repeat(p.rating)}${'☆'.repeat(5-p.rating)} (${p.rating}점)\n`;
+    txt+='\n';
+    MEMO_SECTIONS.forEach(s=>{
+      const m=p.memos&&p.memos[s.k];
+      if(m&&m.trim())txt+=`[${s.lb}]\n${m.trim()}\n\n`;
+    });
+    txt+='\n';
+  });
+  // 다운로드
+  const blob=new Blob([txt],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='임장_메모_'+new Date().toISOString().slice(0,10)+'.txt';
+  a.click();URL.revokeObjectURL(a.href);
+}
+
+// ════════════════════════════════════════════════
+// ⚖️ COMPARE TAB
+// ════════════════════════════════════════════════
+function rCompTab(){
+  const props=loadProps();
+  let h='';
+  if(props.length<2){
+    h=`<div class="cmp-empty">
+      <div style="font-size:36px;margin-bottom:12px">⚖️</div>
+      매물을 2개 이상 추가하면<br>여기서 자동으로 비교해 드려요!<br>
+      <span style="font-size:11px;color:#4B5563;margin-top:8px;display:block">📝 메모 탭에서 매물을 추가하세요</span>
+    </div>`;
+  } else {
+    // 별점 내림차순 정렬
+    const sorted=[...props].sort((a,b)=>(b.rating||0)-(a.rating||0));
+    h+=`<div class="cmp-header">
+      <p>⭐ 별점 높은 순으로 정렬 · ${sorted.length}개 매물 비교 중<br>
+      <span style="font-size:11px">각 카드를 펼쳐 메모를 확인하세요</span></p>
+    </div><div class="cmp-cards">`;
+    sorted.forEach((p,rank)=>{
+      const r=p.rating||0;
+      const sc=scoreClass(r);const bc=borderClass(r);
+      const medal=rank===0?'🥇':rank===1?'🥈':rank===2?'🥉':'';
+      h+=`<details class="cmp-prop ${bc}" style="border-radius:16px">
+        <summary class="cmp-prop-hdr" style="cursor:pointer;list-style:none;outline:none">
+          <div class="cmp-prop-name">${medal} ${p.name||'이름 없는 매물'}</div>
+          <div class="cmp-stars-big">${starHtml(r,'★','☆')}</div>
+          <span class="cmp-score-badge ${sc}">${r?r+'점':'미설정'}</span>
+        </summary>
+        <div class="cmp-fields">
+          <div class="cmp-field"><div class="lbl">호가</div><div class="val">${p.price||'—'}</div></div>
+          <div class="cmp-field"><div class="lbl">면적</div><div class="val">${p.area||'—'}</div></div>
+          <div class="cmp-field"><div class="lbl">층/향</div><div class="val">${p.floor||'—'}</div></div>
+          <div class="cmp-field"><div class="lbl">입주연도</div><div class="val">${p.year||'—'}</div></div>
+          ${p.address?`<div class="cmp-field" style="grid-column:1/-1"><div class="lbl">주소</div><div class="val">${p.address}</div></div>`:''}
+          ${p.link?`<div class="cmp-field" style="grid-column:1/-1"><div class="lbl">링크</div><div class="val"><a href="${esc(p.link)}" target="_blank" style="color:#5B9BD5">바로가기 ↗</a></div></div>`:''}
+        </div>
+        ${p.photos&&p.photos.length?`
+        <div style="padding:10px 14px;border-top:1px solid rgba(255,255,255,.05)">
+          <div style="font-size:10px;color:var(--dim);font-weight:600;margin-bottom:6px">📸 사진</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            ${p.photos.map(src=>`<img src="${src}" style="width:72px;height:72px;border-radius:8px;object-fit:cover">`).join('')}
+          </div>
+        </div>`:''}
+        ${MEMO_SECTIONS.map(s=>{
+          const m=p.memos&&p.memos[s.k];
+          if(!m||!m.trim())return'';
+          return`<div class="cmp-memo-row">
+            <div class="cmp-memo-lbl">${s.lb}</div>
+            <div class="cmp-memo-txt">${m.trim()}</div>
+          </div>`;
+        }).join('')}
+      </details>`;
+    });
+    h+='</div>';
+    // 간략 비교표
+    h+=`<div style="background:var(--card);border-radius:14px;overflow:hidden;margin-top:14px">
+      <div style="padding:10px 14px;font-size:12px;font-weight:700;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.05)">📊 빠른 비교표</div>
+      <table style="width:100%;border-collapse:collapse">
+        <tr style="background:#0D1720">
+          <th style="padding:8px 12px;font-size:11px;color:var(--dim);text-align:left;font-weight:600">매물명</th>
+          <th style="padding:8px 8px;font-size:11px;color:var(--dim);text-align:center;font-weight:600">호가</th>
+          <th style="padding:8px 8px;font-size:11px;color:var(--dim);text-align:center;font-weight:600">층/향</th>
+          <th style="padding:8px 12px;font-size:11px;color:var(--dim);text-align:center;font-weight:600">별점</th>
+        </tr>
+        ${sorted.map((p,i)=>`
+        <tr style="background:${i%2===0?'#141F2E':'#111C2A'}">
+          <td style="padding:8px 12px;font-size:11.5px;color:var(--text);font-weight:${p.rating===Math.max(...props.map(x=>x.rating||0))?700:400}">${p.name||'—'}</td>
+          <td style="padding:8px 8px;font-size:11.5px;color:#6EE7B7;text-align:center">${p.price||'—'}</td>
+          <td style="padding:8px 8px;font-size:11px;color:var(--muted);text-align:center">${p.floor||'—'}</td>
+          <td style="padding:8px 12px;text-align:center"><span class="cmp-score-badge ${scoreClass(p.rating||0)}" style="font-size:10px">${p.rating||0}★</span></td>
+        </tr>`).join('')}
+      </table>
+    </div>`;
+  }
+  document.getElementById('p3').innerHTML=h;
+}
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+</script>
+</body>
+</html>
